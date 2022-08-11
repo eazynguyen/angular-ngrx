@@ -8,16 +8,17 @@ import {NumberValidators} from '../../shared/number.validator';
 import {Store} from '@ngrx/store';
 import {getCurrentProduct} from '../state/product.selector';
 import {Observable} from 'rxjs';
-import { State } from '../state/product.state';
+import {State} from '../state/product.state';
 import * as ProductActions from '../state/product.action';
+import {tap} from 'rxjs/operators';
 
 @Component({
-  selector: 'pm-product-edit',
-  templateUrl: './product-edit.component.html'
+  selector: "pm-product-edit",
+  templateUrl: "./product-edit.component.html",
 })
 export class ProductEditComponent implements OnInit {
-  pageTitle = 'Product Edit';
-  errorMessage = '';
+  pageTitle = "Product Edit";
+  errorMessage = "";
   productForm: FormGroup;
 
   product$: Observable<Product>;
@@ -27,22 +28,25 @@ export class ProductEditComponent implements OnInit {
   private validationMessages: { [key: string]: { [key: string]: string } };
   private genericValidator: GenericValidator;
 
-  constructor(private fb: FormBuilder, private productService: ProductService,private store: Store<State>) {
-
+  constructor(
+    private fb: FormBuilder,
+    private productService: ProductService,
+    private store: Store<State>
+  ) {
     // Defines all of the validation messages for the form.
     // These could instead be retrieved from a file or database.
     this.validationMessages = {
       productName: {
-        required: 'Product name is required.',
-        minlength: 'Product name must be at least three characters.',
-        maxlength: 'Product name cannot exceed 50 characters.'
+        required: "Product name is required.",
+        minlength: "Product name must be at least three characters.",
+        maxlength: "Product name cannot exceed 50 characters.",
       },
       productCode: {
-        required: 'Product code is required.'
+        required: "Product code is required.",
       },
       starRating: {
-        range: 'Rate the product between 1 (lowest) and 5 (highest).'
-      }
+        range: "Rate the product between 1 (lowest) and 5 (highest).",
+      },
     };
 
     // Define an instance of the validator for use with this form,
@@ -53,28 +57,40 @@ export class ProductEditComponent implements OnInit {
   ngOnInit(): void {
     // Define the form group
     this.productForm = this.fb.group({
-      productName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
-      productCode: ['', Validators.required],
-      starRating: ['', NumberValidators.range(1, 5)],
-      description: ''
+      productName: [
+        "",
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(50),
+        ],
+      ],
+      productCode: ["", Validators.required],
+      starRating: ["", NumberValidators.range(1, 5)],
+      description: "",
     });
 
     // TODO  unsubscribe
-    this.store.select(getCurrentProduct).subscribe(currentProduct => this.displayProduct(currentProduct))
 
-    this.product$ = this.store.select(getCurrentProduct)
+    this.product$ = this.store
+      .select(getCurrentProduct)
+      .pipe(tap((currentProduct) => this.displayProduct(currentProduct)));
 
     // Watch for value changes for validation
     this.productForm.valueChanges.subscribe(
-      () => this.displayMessage = this.genericValidator.processMessages(this.productForm)
+      () =>
+        (this.displayMessage = this.genericValidator.processMessages(
+          this.productForm
+        ))
     );
   }
-
 
   // Also validate on blur
   // Helpful if the user tabs through required fields
   blur(): void {
-    this.displayMessage = this.genericValidator.processMessages(this.productForm);
+    this.displayMessage = this.genericValidator.processMessages(
+      this.productForm
+    );
   }
 
   displayProduct(product: Product | null): void {
@@ -86,7 +102,7 @@ export class ProductEditComponent implements OnInit {
 
       // Display the appropriate page title
       if (product.id === 0) {
-        this.pageTitle = 'Add Product';
+        this.pageTitle = "Add Product";
       } else {
         this.pageTitle = `Edit Product: ${product.productName}`;
       }
@@ -96,7 +112,7 @@ export class ProductEditComponent implements OnInit {
         productName: product.productName,
         productCode: product.productCode,
         starRating: product.starRating,
-        description: product.description
+        description: product.description,
       });
     }
   }
@@ -112,7 +128,7 @@ export class ProductEditComponent implements OnInit {
       if (confirm(`Really delete the product: ${product.productName}?`)) {
         this.productService.deleteProduct(product.id).subscribe({
           next: () => this.store.dispatch(ProductActions.clearCurrentProduct()),
-          error: err => this.errorMessage = err
+          error: (err) => (this.errorMessage = err),
         });
       }
     } else {
@@ -131,14 +147,13 @@ export class ProductEditComponent implements OnInit {
 
         if (product.id === 0) {
           this.productService.createProduct(product).subscribe({
-            next: p => this.productService.changeSelectedProduct(p),
-            error: err => this.errorMessage = err
+            next: (p) => this.productService.changeSelectedProduct(p),
+            error: (err) => (this.errorMessage = err),
           });
         } else {
-          this.store.dispatch(ProductActions.updateProduct({product}))
+          this.store.dispatch(ProductActions.updateProduct({ product }));
         }
       }
     }
   }
-
 }
