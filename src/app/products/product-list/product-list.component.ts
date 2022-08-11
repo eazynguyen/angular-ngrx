@@ -18,7 +18,7 @@ import { State } from "../state/product.state";
 @Component({
   selector: "pm-product-list",
   templateUrl: "./product-list.component.html",
-  styleUrls: ["./product-list.component.css"],
+  styleUrls: ["./product-list.component.scss"],
 })
 export class ProductListComponent implements OnInit {
   pageTitle = "Products";

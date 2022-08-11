@@ -3,3 +3,5 @@ yarn.lock
 package-lock.json
 .angular/*
 .idea/workspace.xml
+yarn.lock
+package-lock.json

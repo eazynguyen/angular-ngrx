@@ -1,20 +1,21 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
-import {Product} from '../product';
-import {ProductService} from '../product.service';
-import {GenericValidator} from '../../shared/generic-validator';
-import {NumberValidators} from '../../shared/number.validator';
-import {Store} from '@ngrx/store';
-import {getCurrentProduct} from '../state/product.selector';
-import {Observable} from 'rxjs';
-import {State} from '../state/product.state';
-import * as ProductActions from '../state/product.action';
-import {tap} from 'rxjs/operators';
+import { Product } from "../product";
+import { ProductService } from "../product.service";
+import { GenericValidator } from "../../shared/generic-validator";
+import { NumberValidators } from "../../shared/number.validator";
+import { Store } from "@ngrx/store";
+import { getCurrentProduct } from "../state/product.selector";
+import { Observable } from "rxjs";
+import { State } from "../state/product.state";
+import * as ProductActions from "../state/product.action";
+import { tap } from "rxjs/operators";
 
 @Component({
   selector: "pm-product-edit",
   templateUrl: "./product-edit.component.html",
+  styleUrls: ["./product-edit.component.scss"],
 })
 export class ProductEditComponent implements OnInit {
   pageTitle = "Product Edit";

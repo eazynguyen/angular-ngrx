@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7845cd0f-215b-45d8-b6de-722a6d0d4380" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.angular/cache/14.1.1/angular-webpack/62cfadb9a78de2e79d76af031310580b73c762a9/1.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.angular/cache/14.1.1/angular-webpack/62cfadb9a78de2e79d76af031310580b73c762a9/1.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.angular/cache/14.1.1/angular-webpack/62cfadb9a78de2e79d76af031310580b73c762a9/4.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.angular/cache/14.1.1/angular-webpack/62cfadb9a78de2e79d76af031310580b73c762a9/4.pack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/products/product-edit/product-edit.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/14.1.1/angular-webpack/62cfadb9a78de2e79d76af031310580b73c762a9/0.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.angular/cache/14.1.1/angular-webpack/62cfadb9a78de2e79d76af031310580b73c762a9/0.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/14.1.1/angular-webpack/62cfadb9a78de2e79d76af031310580b73c762a9/3.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.angular/cache/14.1.1/angular-webpack/62cfadb9a78de2e79d76af031310580b73c762a9/3.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.angular/cache/14.1.1/angular-webpack/62cfadb9a78de2e79d76af031310580b73c762a9/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.angular/cache/14.1.1/angular-webpack/62cfadb9a78de2e79d76af031310580b73c762a9/index.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.angular/cache/14.1.1/angular-webpack/62cfadb9a78de2e79d76af031310580b73c762a9/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/.angular/cache/14.1.1/angular-webpack/62cfadb9a78de2e79d76af031310580b73c762a9/index.pack.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/products/product-edit/product-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/products/product-edit/product-edit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/products/product-list/product-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/products/product-list/product-list.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/products/product-list/product-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/products/product-list/product-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -52,6 +57,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -102,7 +108,7 @@
       <workItem from="1659583059292" duration="3726000" />
       <workItem from="1660032864585" duration="2051000" />
       <workItem from="1660200712621" duration="366000" />
-      <workItem from="1660201088877" duration="1072000" />
+      <workItem from="1660201088877" duration="1406000" />
     </task>
     <servers />
   </component>
